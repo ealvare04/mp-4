@@ -20,6 +20,7 @@ export type CharacterResponse = {
     "results-for": string;
     characters: Character[];
 }
+
 //
 // export type JsonBinResponse = {
 //     record: CharacterResponse;

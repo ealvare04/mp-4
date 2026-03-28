@@ -8,7 +8,8 @@ const CharacterCardWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid white;
+    background: yellow;
     margin: auto;
     width: 200px;
     border-radius: 10px;
@@ -24,6 +25,10 @@ const CharacterName = styled.h2`
 const StyledText = styled.p`
     text-align: center;
     color: black;
+`;
+
+const PublisherDiv = styled.div`
+    background-color: white;
 `;
 
 type CharacterCardProps = {
@@ -47,6 +52,12 @@ export default function CharacterCard({ character }: CharacterCardProps){
             <StyledText>
                 Aliases: {character.biography.aliases.join(", ")}
             </StyledText>
+
+            <PublisherDiv>
+                <StyledText>
+                    {character.biography.publisher}
+                </StyledText>
+            </PublisherDiv>
         </CharacterCardWrapper>
     )
 }

@@ -8,13 +8,18 @@ import CharacterCard from "@/components/characterCard";
 
 const CharacterContentWrapper = styled.main`
     width: 80vw;
-    margin: auto;
-    background-color: yellow;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'Poppins', sans-serif;
 `;
 
 const SearchedName = styled.h1`
-    color: blue;
+    color: #4b0082;
     text-align: center;
+    font-size: 2rem;
 `;
 
 export default function CharacterPage() {
