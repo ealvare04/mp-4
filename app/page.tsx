@@ -1,36 +1,24 @@
-'use client'
+"use client"
 
+import styled from "styled-components";
 import { useState } from 'react'
 import Link from "next/link";
 
+const StyledDiv=styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
 export default function Home() {
-    const [query, setQuery] = useState('');
+    const [name, setName] = useState("");
 
     return (
-        <main>
-            <h1>
-                Find A Hero or Villain
-            </h1>
-            <p>Make a search for any hero or villain!</p>
-
-            <div>
-                <input
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="..."
-                />
-
-                {/* link to query if text is input, else stay at home page */}
-                {/* NEED TO ADD SPINAL CASE FOR ANY SPACES IN A NAME */}
-
-                {/* ADD MORE WORK HERE */}
-
-                <Link href={ query ? `/character/${query.toLowerCase()}` : `/`}>
-                    <button>
-                        GO
-                    </button>
-                </Link>
-            </div>
-        </main>
+        <StyledDiv>
+            <h1>Find any Hero or Villain!</h1>
+            <p>Enter the name of any hero or villain below</p>
+            <input type="text" value={name} placeholder="Character name" onChange={(e) => setName(e.target.value)} />
+            <Link href={`/${name}`}>Get Character</Link>
+        </StyledDiv>
     )
 }
