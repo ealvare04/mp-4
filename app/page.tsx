@@ -10,6 +10,10 @@ const StyledDiv=styled.div`
     align-items: center;
 `
 
+const StyledInput = styled.input`
+    text-align: center;
+`;
+
 export default function Home() {
     const [name, setName] = useState("");
 
@@ -17,7 +21,7 @@ export default function Home() {
         <StyledDiv>
             <h1>Find any Hero or Villain!</h1>
             <p>Enter the name of any hero or villain below</p>
-            <input type="text" value={name} placeholder="Character name" onChange={(e) => setName(e.target.value)} />
+            <StyledInput type="text" value={name} placeholder="..." onChange={(e) => setName(e.target.value)} />
             <Link href={`/${name}`}>Get Character</Link>
         </StyledDiv>
     )

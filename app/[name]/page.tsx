@@ -14,6 +14,7 @@ const CharacterContentWrapper = styled.main`
 
 const SearchedName = styled.h1`
     color: blue;
+    text-align: center;
 `;
 
 export default function CharacterPage() {

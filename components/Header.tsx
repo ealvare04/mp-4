@@ -1,18 +1,21 @@
 import Link from 'next/link'
+import styled from "styled-components";
+
+const StyledHeader = styled.header`
+    text-align: center;
+`;
 
 export default function Header() {
     return (
-        <header>
+        <StyledHeader>
             <h1>
                 HERO SEARCH
             </h1>
             <nav>
-                <div>
-                    <Link href="/">
-                        Home
-                    </Link>
-                </div>
+                <Link href="/">
+                    Home
+                </Link>
             </nav>
-        </header>
+        </StyledHeader>
     )
 }

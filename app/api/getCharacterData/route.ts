@@ -24,8 +24,5 @@ export async function GET(request:Request): Promise<NextResponse> {
 
     const data = await res.json();
 
-    console.log("API key is:", SUPERHERO_API_KEY);
-    console.log("API data:", JSON.stringify(data, null, 2));
-
     return NextResponse.json(data);
 }

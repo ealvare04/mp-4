@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Character} from "@/types/Character";
 import Image from "next/image";
+import Link from "next/link";
 
 const CharacterCardWrapper = styled.div`
     display: flex;
@@ -32,20 +33,20 @@ type CharacterCardProps = {
 export default function CharacterCard({ character }: CharacterCardProps){
     return(
         <CharacterCardWrapper>
-            <Image
-                src={character.image?.url || "/placeholder.png"}
-                alt={character.name}
-                width={150}
-                height={150}
-            />
+            <Link href={character.image.url}>
+                <Image
+                    src={character.image.url}
+                    alt={character.name}
+                    width={250}
+                    height={250}
+                />
+            </Link>
             <CharacterName>{character.name}</CharacterName>
             <StyledText>{character.biography["full-name"]}</StyledText>
 
-            {character.biography.aliases?.length > 0 && (
-                <StyledText>
-                    Aliases: {character.biography.aliases.join(", ")}
-                </StyledText>
-            )}
+            <StyledText>
+                Aliases: {character.biography.aliases.join(", ")}
+            </StyledText>
         </CharacterCardWrapper>
     )
 }
