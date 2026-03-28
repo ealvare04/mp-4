@@ -2,9 +2,16 @@ export type Image = {
     url: string;
 };
 
+export type Biography = {
+    "full-name": string;
+    aliases: string[];
+    publisher: string;
+}
+
 export type Character = {
     id: number;
     name: string;
+    biography: Biography;
     image: Image;
 }
 

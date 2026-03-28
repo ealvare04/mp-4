@@ -8,7 +8,7 @@ const CharacterCardWrapper = styled.div`
     justify-content: center;
     padding: 1rem;
     border: 1px solid black;
-    margin: 1rem;
+    margin: auto;
     width: 200px;
     border-radius: 10px;
 `;
@@ -18,6 +18,11 @@ const CharacterName = styled.h2`
     text-align: center;
     font-size: 1.2rem;
     color: #4b0082;
+`;
+
+const StyledText = styled.p`
+    text-align: center;
+    color: black;
 `;
 
 type CharacterCardProps = {
@@ -34,6 +39,13 @@ export default function CharacterCard({ character }: CharacterCardProps){
                 height={150}
             />
             <CharacterName>{character.name}</CharacterName>
+            <StyledText>{character.biography["full-name"]}</StyledText>
+
+            {character.biography.aliases?.length > 0 && (
+                <StyledText>
+                    Aliases: {character.biography.aliases.join(", ")}
+                </StyledText>
+            )}
         </CharacterCardWrapper>
     )
 }
